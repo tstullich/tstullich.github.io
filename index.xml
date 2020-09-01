@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tilt Shift</title>
+    <link>tstullich.github.io/</link>
+    <description>Recent content on Tilt Shift</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Tim Stullich</copyright>
+    <lastBuildDate>Tue, 01 Sep 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="tstullich.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>A Vulkan &#43; Dear ImGui Sandbox</title>
+      <link>tstullich.github.io/posts/vulkan-sandbox/</link>
+      <pubDate>Tue, 01 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>tstullich.github.io/posts/vulkan-sandbox/</guid>
+      <description>Overview For my first technical post I wanted to write about a topic that I have been trying to improve myself in for quite some time - Vulkan. Compared to other APIs that interface with GPUs, Vulkan chooses to be overly explicit to give programmers full control of how their application behaves. This extra verbosity makes the API very appealing for writing high-performance applications, because the device driver will have to deal with less overhead when running the appliction on the GPU.</description>
+    </item>
+    
+    <item>
+      <title>Hello! :)</title>
+      <link>tstullich.github.io/posts/introduction/</link>
+      <pubDate>Tue, 01 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>tstullich.github.io/posts/introduction/</guid>
+      <description>Thanks for being here! As this is my first blog post, I would like to introduce myself and set the expectations of what you, the reader, can expect from this blog.
+Who Am I? My name is Tim Stullich and I am a Software Developer based out of Berlin, Germany. I started off my journey in Computer Science when I began my Bachelor&amp;rsquo;s studies at San Jose State University in 2010.</description>
+    </item>
+    
+    <item>
+      <title>About Me</title>
+      <link>tstullich.github.io/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>tstullich.github.io/about/</guid>
+      <description>Thanks for visiting my website. My name is Tim Stullich and I am a Software Developer with a Master&amp;rsquo;s degree in Computer Science. My main interests revolve around computer graphics and machine learning, so most of the content on this website will be focused towards these subjects. I do have plans to write about less scientific topics though. I am also a big fan of video and board games, which have shaped a large part of my upbringing.</description>
+    </item>
+    
+    <item>
+      <title>Portfolio</title>
+      <link>tstullich.github.io/portfolio/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>tstullich.github.io/portfolio/</guid>
+      <description>All of the source code for the listed projects can be viewed on my Github profile or you can find a link to each individual repository at the bottom of each project.
+Personal Projects 1. Vulkan Deferred Renderer C++ Vulkan GLSL C++ Dear ImGui Rendering GUI Shaders
+The first triangle has been rendered!  I am currently working on building out a deferred renderer using Vulkan and Dear ImGui. My intent is to improve my knowledge around Vulkan and realtime rendering, while also providing a way for others to see what it&amp;rsquo;s like building a renderer from scratch.</description>
+    </item>
+    
+  </channel>
+</rss>

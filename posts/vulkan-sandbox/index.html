@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>A Vulkan &#43; Dear ImGui Sandbox :: Tilt Shift</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Overview For my first technical post I wanted to write about a topic that I have been trying to improve myself in for quite some time - Vulkan. Compared to other APIs that interface with GPUs, Vulkan chooses to be overly explicit to give programmers full control of how their application behaves. This extra verbosity makes the API very appealing for writing high-performance applications, because the device driver will have to deal with less overhead when running the appliction on the GPU." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="tstullich.github.io/posts/vulkan-sandbox/" />
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/tstullich.github.io/css/style.min.css">
+
+
+  
+  
+  <link rel="stylesheet" href="/tstullich.github.io/css/color/green.min.css">
+
+
+
+
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="tstullich.github.io/img/apple-touch-icon-144-precomposed.png">
+
+  <link rel="shortcut icon" href="tstullich.github.io">
+
+
+
+<script src="https://kit.fontawesome.com/4a6cf05255.js" crossorigin="anonymous"></script>
+
+
+<meta name="twitter:card" content="summary" />
+
+  
+    <meta name="twitter:site" content="" />
+  
+    <meta name="twitter:creator" content="tstullich" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="A Vulkan &#43; Dear ImGui Sandbox :: Tilt Shift">
+<meta property="og:description" content="This is the first post in a series following my development on a deferred renderer in Vulkan. The code can also be used as a base to build other applications." />
+<meta property="og:url" content="tstullich.github.io/posts/vulkan-sandbox/" />
+<meta property="og:site_name" content="A Vulkan &#43; Dear ImGui Sandbox" />
+
+  <meta property="og:image" content="tstullich.github.io">
+
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+
+  <meta property="article:published_time" content="2020-09-01 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="green">
+
+
+<div class="container center">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    Tilt Shift
+  </div>
+</a>
+
+    </div>
+    <div class="menu-trigger">menu</div>
+  </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="tstullich.github.io/about">About</a></li>
+        
+      
+        
+          <li><a href="tstullich.github.io/portfolio">Portfolio</a></li>
+        
+      
+        
+          <li><a href="tstullich.github.io/posts">Posts</a></li>
+        
+      
+      
+    
+
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="tstullich.github.io/about">About</a></li>
+      
+    
+      
+        <li><a href="tstullich.github.io/portfolio">Portfolio</a></li>
+      
+    
+      
+        <li><a href="tstullich.github.io/posts">Posts</a></li>
+      
+    
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h1 class="post-title">
+    <a href="tstullich.github.io/posts/vulkan-sandbox/">A Vulkan + Dear ImGui Sandbox</a></h1>
+  <div class="post-meta">
+    
+      <span class="post-date">
+        2020-09-01 [Updated: 2020-09-01]
+      </span>
+    
+    
+    <span class="post-author">:: Tim Stullich</span>
+    
+  </div>
+
+  
+  <span class="post-tags">
+    
+    #<a href="tstullich.github.io/tags/computer-graphics/">computer-graphics</a>&nbsp;
+    
+    #<a href="tstullich.github.io/tags/vulkan/">vulkan</a>&nbsp;
+    
+    #<a href="tstullich.github.io/tags/dear-imgui/">dear-imgui</a>&nbsp;
+    
+  </span>
+  
+
+  
+
+  
+    <div class="table-of-contents">
+      <h2>
+        
+          Table of Contents
+        
+      </h2>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#prerequisites">Prerequisites</a></li>
+    <li><a href="#installation">Installation</a>
+      <ul>
+        <li><a href="#dependencies">Dependencies</a></li>
+        <li><a href="#building">Building</a></li>
+      </ul>
+    </li>
+    <li><a href="#code-structure">Code Structure</a>
+      <ul>
+        <li><a href="#initialization">Initialization</a></li>
+        <li><a href="#loading-shaders">Loading Shaders</a></li>
+        <li><a href="#user-interface">User Interface</a></li>
+        <li><a href="#rendering-loop">Rendering Loop</a></li>
+      </ul>
+    </li>
+    <li><a href="#wrapup">Wrapup</a></li>
+    <li><a href="#references">References</a></li>
+    <li><a href="#download-link">Download Link</a></li>
+  </ul>
+</nav>
+    </div>
+  
+
+  <div class="post-content"><div>
+        <h2 id="overview">Overview<a href="#overview" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>For my first technical post I wanted to write about a topic that I have been
+trying to improve myself in for quite some time - Vulkan. Compared to other APIs
+that interface with GPUs, Vulkan chooses to be overly explicit to give programmers
+full control of how their application behaves. This extra verbosity makes the API
+very appealing for writing high-performance applications, because the device driver will
+have to deal with less overhead when running the appliction on the GPU.</p>
+<p>However, this comes with the caveat that a lot more boilerplate code is
+required from the user to configure a rendering pipeline. So if you are a newcomer to Vulkan and
+have attempted to write your own renderer using Vulkan, you must have quickly realized
+how much code it takes to even get a single triangle rendered on screen.</p>
+<p>Personally, this was always a large barrier to entry for learning Vulkan, but
+after a couple of running starts I believe I have finally overcome this problem.
+Now I want to make it easier for other newcomers to developing applications for Vulkan.</p>
+<p>This is why I have created a small <em>sandbox</em> application, which is just a very basic version
+of Vulkan application that should allow anyone to get started writing Vulkan code.
+The codebase includes all of the logic to create a graphics pipeline
+with Vulkan to render a triangle on screen and also integrates <em>Dear ImGui</em> as
+a programmable GUI which can be used later on to interact with the application. My hope
+is that this will eliminate some of the initial hesitation for people who want
+to learn Vulkan.</p>
+<p>This post is going to become a part of a series of entries that will describe how
+I approached the writing of deferred Vulkan renderer, so stay tuned for future posts.</p>
+<h2 id="prerequisites">Prerequisites<a href="#prerequisites" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>I am going to assume that you have familiarized yourself with some of the terminology
+from the Vulkan API and have experience writing a C++ application. I will not
+be going into all of the technical details for Vulkan or Dear ImGui, so if you
+want to read up on any topics discussed in this post I recommend you take a look at the
+<a href="#references">References</a> section.</p>
+<h2 id="installation">Installation<a href="#installation" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>For the installation I am going to assume you are working in a Linux environment,
+but all of the instructions should be easily transferable to other platforms.</p>
+<h3 id="dependencies">Dependencies<a href="#dependencies" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>I tried to keep the number of dependencies as low as possible, so that it is easy
+for any user to tailor the codebase to their own needs. However, in order to compile
+the code right off the bat you will need:</p>
+<ul>
+<li>A C++14 compiler toolchain</li>
+<li>CMake (3.16)</li>
+<li><a href="https://www.lunarg.com/vulkan-sdk/">Vulkan SDK</a> (1.2)</li>
+<li><a href="https://www.glfw.org/">GLFW</a> (3.3)</li>
+</ul>
+<p>All of these dependencies are mandatory except for GLFW, which can be swapped out
+for another preferred cross-platform I/O handling library.</p>
+<h3 id="building">Building<a href="#building" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>Once you have installed all of the necessary dependencies you can download a copy
+of the repository or clone it using the following command:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git clone https://github.com/tstullich/vk-sandbox
+</code></pre></div><p>After the download finishes change to the root of the repository, where
+you can build the source code:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">mkdir build
+cd build
+cmake ..
+make
+</code></pre></div><p>If everything was built correctly, the <code>renderer</code> binary should be contained within the
+<code>/build/cmake-build-debug/src</code> directory.</p>
+<p>One important last step is to compile the GLSL shaders into SPIR-V binaries, which need
+to be loaded by the renderer at runtime. Contained within the <code>shaders/</code> directory is a
+script called <code>compile.sh</code> that can be executed to compile the shaders. The script uses the
+<code>glslangValidator</code> from the Vulkan SDK, so make sure that the binary is visible through
+your $PATH variable. The compiled .spv binary files should be contained within the same
+directory, if the compilation was successful.</p>
+<p>Now you should have everything in place to run the program. Executing the renderer binary
+from the root directory should give you an output window with a triangle and UI as shown
+below.</p>
+
+  <figure class="center" >
+    <img src="/img/hello-triangle.png"  alt="Vulkan Renderer"   style="border-radius: 8px;"  />
+    
+      <figcaption class="center" >The first Vulkan triangle and Dear ImGui</figcaption>
+    
+  </figure>
+
+
+<h2 id="code-structure">Code Structure<a href="#code-structure" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>The code for the renderer is located in <code>application.h</code> and <code>application.cpp</code> and is purposefully
+kept in one class, so that it is easy to overview all of the components. This should
+also make it easier to break up the components to be more compartmentalized in the future.
+The logic in the code revolves mainly around initializing all of the necessary components
+for the Vulkan pipeline and UI, and then running a rendering loop until the user exits
+the program. What follows is a brief description of what goes into these parts.</p>
+<h3 id="initialization">Initialization<a href="#initialization" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>Within the <code>Application</code> constructor lies the entry point to all of the logic that is
+needed to initialize the renderer. Starting off the initialization process is the <code>initVulkan</code>
+function that contains all of the logic for setting up the Vulkan pipeline.</p>
+
+
+
+  <div class="collapsable-code">
+    <input id="1" type="checkbox"  />
+    <label for="1">
+      <span class="collapsable-code__language">cpp</span>
+      <span class="collapsable-code__title">initVulkan()</span>
+      <span class="collapsable-code__toggle" data-label-expand="Show" data-label-collapse="Hide"></span>
+    </label>
+    <pre class="language-cpp" ><code>
+void Application::initVulkan() {
+    createInstance();
+    setupDebugMessenger();
+    createSurface();
+    physicalDevice = pickPhysicalDevice();
+    getDeviceQueueIndices();
+    createLogicalDevice();
+    createSwapchain();
+    createImageViews();
+    createRenderPass();
+    createGraphicsPipeline();
+    createFramebuffers();
+    createCommandPool();
+    createCommandBuffers();
+    createSyncObjects();
+    createDescriptorPool();
+}
+</code></pre>
+  </div>
+
+
+<p>Some components have a strict dependency on one another, so the ordering of the function calls is quite
+important. Although I had Vulkan&rsquo;s validation layers enabled from the start, some errors could not
+be caught by them. This led to segmentation faults at runtime, which would occur when passing invalid
+Vulkan handles to <code>vkCreate()</code> functions.</p>
+<p>However, the Vulkan API is designed to follow strictly the same function call pattern,
+which makes it easy to handoff the necessary data. All of the renderer&rsquo;s <code>createSomething()</code>
+functions follow more or less the same pattern of:</p>
+<ul>
+<li>Create a VK_COMPONENT struct</li>
+<li>Fill the struct with the necessary data</li>
+<li>Hand off the information struct to a <code>vkCreate()</code> function</li>
+<li>Check the <code>VK_RESULT</code> if the function call succeeded</li>
+</ul>
+<p>This repeated pattern is also the source of the great amount of boilerplate code. If you take a
+closer look at the code, you will find that a majority of it is occupied with creating and
+setting the data fields of the structs provided by the Vulkan API. This might be intimidating at
+first if you are unfamiliar with the API, but once you spend some time writing the code it
+actually becomes an easily repeated pattern.</p>
+<h3 id="loading-shaders">Loading Shaders<a href="#loading-shaders" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>A class to load SPIR-V shader code can also be found in <code>shaderloader.h</code>. Make sure to recompile
+the shaders if any changes are made to them. There is a way to hook the execution of the shader
+compile script into the build process using CMake, but at the time of writing this post this
+is not supported by the sandbox.</p>
+<h3 id="user-interface">User Interface<a href="#user-interface" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>Getting Dear ImGui setup was trickier than writing the code for the renderer.
+The documentation for Dear ImGui is quite scattered and at times nonexistent, so finding
+reliable information on how to integrate the library with Vulkan took more time than expected.
+Luckily, I came across François Guthmann&rsquo;s blog, which has a lot of useful information on
+how to solve this problem. I have linked it below in the <a href="#references">References</a> section if you
+are interested in more details.</p>
+<p>The <code>initUI</code> function contains all of the logic initialize Dear ImGui for rendering.</p>
+
+
+
+  <div class="collapsable-code">
+    <input id="1" type="checkbox"  />
+    <label for="1">
+      <span class="collapsable-code__language">cpp</span>
+      <span class="collapsable-code__title">initUI()</span>
+      <span class="collapsable-code__toggle" data-label-expand="Show" data-label-collapse="Hide"></span>
+    </label>
+    <pre class="language-cpp" ><code>
+void Application::initUI() {
+    IMGUI_CHECKVERSION();
+    ImGui::CreateContext();
+    ImGui::StyleColorsDark();
+
+    // Initialize some DearImgui specific resources
+    createUIDescriptorPool();
+    createUIRenderPass();
+    createUICommandPool(&amp;uiCommandPool,
+                        VK_COMMAND_POOL_CREATE_RESET_COMMAND_BUFFER_BIT);
+    createUICommandBuffers();
+    createUIFramebuffers();
+
+    // Provide bind points from Vulkan API
+    ImGui_ImplGlfw_InitForVulkan(window, true);
+    ImGui_ImplVulkan_InitInfo init_info = {};
+    init_info.Instance = instance;
+    init_info.PhysicalDevice = physicalDevice;
+    init_info.Device = logicalDevice;
+    init_info.QueueFamily = queueIndices.graphicsFamilyIndex;
+    init_info.Queue = graphicsQueue;
+    init_info.DescriptorPool = uiDescriptorPool;
+    init_info.MinImageCount = imageCount;
+    init_info.ImageCount = imageCount;
+    ImGui_ImplVulkan_Init(&amp;init_info, uiRenderPass);
+
+    // Upload the fonts for DearImgui
+    VkCommandBuffer commandBuffer = beginSingleTimeCommands(uiCommandPool);
+    ImGui_ImplVulkan_CreateFontsTexture(commandBuffer);
+    endSingleTimeCommands(commandBuffer, uiCommandPool);
+    ImGui_ImplVulkan_DestroyFontUploadObjects();
+}
+</code></pre>
+  </div>
+
+
+<p>The main realization I had to make was that Dear ImGui requires a number of extra resources,
+that were not immediately available in my initial code. Dear ImGui requires the user
+to setup an extra set of framebuffers, a render pass, and command buffers which in turn
+required the allocation of a command and descriptor pool. I was under the impression that I
+could reuse my command buffers and integrate some extra logic into the main render pass
+to make Dear ImGui work, but this is not the case. Without these resources the renderer
+would repeatedly crash at runtime, which was frustrating to debug.</p>
+<p>Once the extra resources had been created, integrating the UI into the rendering loop was
+quite simple. All that had to be done was to fill out the <code>ImGui_ImplVulkan_InitInfo</code>
+struct and call the corresponding Dear ImGui helper functions, which took over the
+rest of the initialization.</p>
+<h3 id="rendering-loop">Rendering Loop<a href="#rendering-loop" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>Now that all the necessary components are setup and ready to run, the main rendering loop
+takes over. With the bulk of the code being dedicated to initializing the state of the
+Vulkan pipeline, it should come as no surprise that the actual rendering portion is
+comparatively short. The rendering loop is triggered through the <code>run</code> function, where we
+poll GLFW for any input events from the keyboard, build the UI components in <code>drawUI</code> and eventually
+reach the <code>drawFrame</code> function, which contains the main logic to render and present one frame.</p>
+<p>Drawing a frame requires the following operations:</p>
+<ol>
+<li>Wait for the current frame&rsquo;s fences</li>
+<li>Acquire the next presentable image from the swapchain</li>
+<li>Mark the current image as being in use</li>
+<li>Record Dear ImGui&rsquo;s command buffer</li>
+<li>Submit the command buffers to the graphics queue</li>
+<li>Submit the image to the presentation queue</li>
+</ol>
+<p>These steps are then executed at each loop iteration until the user exits the program.</p>
+<h2 id="wrapup">Wrapup<a href="#wrapup" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>Hopefully this post has given you a broad overview of what it takes to get started in writing
+a Vulkan application. Of course there is more code in the sandbox that I have not touched on,
+but at least you should be comfortable in navigating the code and have a feeling for the
+structure of a Vulkan application. If you have any questions, drop a comment below and I will
+try to answer it as soon as possible.</p>
+<h2 id="references">References<a href="#references" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>Here I have listed some links, which have helped me a lot in learning more about Vulkan and Dear ImGui.
+Perhaps they will be useful to you as well.</p>
+<ul>
+<li><a href="https://vulkan-tutorial.com/">vulkan-tutorial.com</a> - Step-by-step introduction to writing a Vulkan renderer.</li>
+<li><a href="https://www.khronos.org/registry/vulkan/specs/1.2-extensions/html/vkspec.html">Vulkan Specification</a> - The Vulkan specification is a great resource for in-depth details of Vulkan.</li>
+<li><a href="https://github.com/ocornut/imgui">Dear ImGui Documentation</a> - For more information on how to customize the UI.</li>
+<li><a href="https://frguthmann.github.io/projects/raytracinginaweekend/">François Guthmann&rsquo;s blog</a> - A great blog post on how to integrate Dear ImGui into a Vulkan application.</li>
+</ul>
+<h2 id="download-link">Download Link<a href="#download-link" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>If you wish to use this sandbox project for your own projects, feel free to download
+the code from my <a href="https://github.com/tstullich/vk-sandbox">Github</a>.</p>
+
+      </div></div>
+
+  
+  
+<div class="pagination">
+    <div class="pagination__title">
+        <span class="pagination__title-h">Read other posts</span>
+        <hr />
+    </div>
+    <div class="pagination__buttons">
+        
+        
+        <span class="button next">
+            <a href="tstullich.github.io/posts/introduction/">
+                <span class="button__text">Hello! :)</span>
+                <span class="button__icon">→</span>
+            </a>
+        </span>
+        
+    </div>
+</div>
+
+  
+
+
+  
+      
+<div id="disqus_thread"></div>
+<script>
+(function() {
+var d = document, s = d.createElement('script');
+s.src = 'https://tilt-shift.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  
+</div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">
+        <span>Tim Stullich
+        <a href="https://github.com/tstullich"><i class="fa fa-github"></i></a>
+        <a href="https://twitter.com/tstullich"><i class="fa fa-twitter"></i></a>
+        <a href="https://www.linkedin.com/in/timstullich/"><i class="fa fa-linkedin"></i></a>
+        </span>
+    
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+
+
+
+
+
+<script src="/tstullich.github.io/js/menu.js"></script>
+<script src="/tstullich.github.io/js/prism.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

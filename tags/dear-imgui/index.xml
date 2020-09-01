@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>dear-imgui on Tilt Shift</title>
+    <link>tstullich.github.io/tags/dear-imgui/</link>
+    <description>Recent content in dear-imgui on Tilt Shift</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Tim Stullich</copyright>
+    <lastBuildDate>Tue, 01 Sep 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="tstullich.github.io/tags/dear-imgui/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>A Vulkan &#43; Dear ImGui Sandbox</title>
+      <link>tstullich.github.io/posts/vulkan-sandbox/</link>
+      <pubDate>Tue, 01 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>tstullich.github.io/posts/vulkan-sandbox/</guid>
+      <description>Overview For my first technical post I wanted to write about a topic that I have been trying to improve myself in for quite some time - Vulkan. Compared to other APIs that interface with GPUs, Vulkan chooses to be overly explicit to give programmers full control of how their application behaves. This extra verbosity makes the API very appealing for writing high-performance applications, because the device driver will have to deal with less overhead when running the appliction on the GPU.</description>
+    </item>
+    
+  </channel>
+</rss>
