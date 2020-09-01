@@ -2,58 +2,58 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Tilt Shift</title>
-    <link>tstullich.github.io/tags/</link>
+    <link>/tags/</link>
     <description>Recent content in Tags on Tilt Shift</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Tim Stullich</copyright>
     <lastBuildDate>Tue, 01 Sep 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="tstullich.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>computer-graphics</title>
-      <link>tstullich.github.io/tags/computer-graphics/</link>
+      <link>/tags/computer-graphics/</link>
       <pubDate>Tue, 01 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>tstullich.github.io/tags/computer-graphics/</guid>
+      <guid>/tags/computer-graphics/</guid>
       <description></description>
     </item>
     
     <item>
       <title>dear-imgui</title>
-      <link>tstullich.github.io/tags/dear-imgui/</link>
+      <link>/tags/dear-imgui/</link>
       <pubDate>Tue, 01 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>tstullich.github.io/tags/dear-imgui/</guid>
+      <guid>/tags/dear-imgui/</guid>
       <description></description>
     </item>
     
     <item>
       <title>introduction</title>
-      <link>tstullich.github.io/tags/introduction/</link>
+      <link>/tags/introduction/</link>
       <pubDate>Tue, 01 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>tstullich.github.io/tags/introduction/</guid>
+      <guid>/tags/introduction/</guid>
       <description></description>
     </item>
     
     <item>
       <title>personal</title>
-      <link>tstullich.github.io/tags/personal/</link>
+      <link>/tags/personal/</link>
       <pubDate>Tue, 01 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>tstullich.github.io/tags/personal/</guid>
+      <guid>/tags/personal/</guid>
       <description></description>
     </item>
     
     <item>
       <title>vulkan</title>
-      <link>tstullich.github.io/tags/vulkan/</link>
+      <link>/tags/vulkan/</link>
       <pubDate>Tue, 01 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>tstullich.github.io/tags/vulkan/</guid>
+      <guid>/tags/vulkan/</guid>
       <description></description>
     </item>
     
