@@ -47,8 +47,8 @@ Who Am I? My name is Tim Stullich and I am a Software Developer based out of Ber
       
       <guid>/portfolio/</guid>
       <description>All of the source code for the listed projects can be viewed on my Github profile or you can find a link to each individual repository at the bottom of each project.
-Personal Projects 1. Vulkan Deferred Renderer C++ Vulkan GLSL C++ Dear ImGui Rendering GUI Shaders
-The first triangle has been rendered!  I am currently working on building out a deferred renderer using Vulkan and Dear ImGui. My intent is to improve my knowledge around Vulkan and realtime rendering, while also providing a way for others to see what it&amp;rsquo;s like building a renderer from scratch.</description>
+Personal Projects 1. Vulkan Deferred Renderer (Work In Progress) C++ Vulkan GLSL C++ Dear ImGui Rendering GUI Shaders
+The first triangle has been rendered!  I am currently working on building out a deferred renderer using Vulkan and Dear ImGui.</description>
     </item>
     
   </channel>
