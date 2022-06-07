@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>dear-imgui - Tag - Tim Stullich</title>
+        <link>https://tstullich.github.io/tags/dear-imgui/</link>
+        <description>dear-imgui - Tag - Tim Stullich</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>tstullich&#39;at&#39;protonmail.com (Tim Stullich)</managingEditor>
+            <webMaster>tstullich&#39;at&#39;protonmail.com (Tim Stullich)</webMaster><lastBuildDate>Tue, 01 Sep 2020 17:27:56 &#43;0200</lastBuildDate><atom:link href="https://tstullich.github.io/tags/dear-imgui/" rel="self" type="application/rss+xml" /><item>
+    <title>A Vulkan &#43; Dear ImGui Sandbox</title>
+    <link>https://tstullich.github.io/posts/vulkan-sandbox/</link>
+    <pubDate>Tue, 01 Sep 2020 17:27:56 &#43;0200</pubDate>
+    <author>Tim Stullich</author>
+    <guid>https://tstullich.github.io/posts/vulkan-sandbox/</guid>
+    <description><![CDATA[Overview For my first technical post I wanted to write about a topic that I have been trying to improve myself in for quite some time - Vulkan. Compared to other APIs that interface with GPUs, Vulkan chooses to be overly explicit to give programmers full control of how their application behaves. This extra verbosity makes the API very appealing for writing high-performance applications, because the device driver will have to deal with less overhead when running the appliction on the GPU.]]></description>
+</item>
+</channel>
+</rss>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Portfolio - Tim Stullich</title><meta name="Description" content="A personal blog about computer graphics and my other interests"><meta property="og:title" content="Portfolio" />
+<meta property="og:description" content="All of the source code for the listed projects can be viewed on my Github profile or you can find a link to each individual repository at the bottom of each project.
+Personal Projects 1. Vulkan Deferred Renderer (Work In Progress) C&#43;&#43; Vulkan GLSL C&#43;&#43; Dear ImGui Rendering GUI Shaders
+ The first triangle has been rendered!
+  I am currently working on building out a deferred renderer using Vulkan and Dear ImGui." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://tstullich.github.io/portfolio/" /><meta property="article:section" content="" />
+
+<meta property="og:site_name" content="Tim Stullich&#39;s Blog" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Portfolio"/>
+<meta name="twitter:description" content="All of the source code for the listed projects can be viewed on my Github profile or you can find a link to each individual repository at the bottom of each project.
+Personal Projects 1. Vulkan Deferred Renderer (Work In Progress) C&#43;&#43; Vulkan GLSL C&#43;&#43; Dear ImGui Rendering GUI Shaders
+ The first triangle has been rendered!
+  I am currently working on building out a deferred renderer using Vulkan and Dear ImGui."/>
+<meta name="application-name" content="Tim Stullich">
+<meta name="apple-mobile-web-app-title" content="Tim Stullich"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://tstullich.github.io/portfolio/" /><link rel="next" href="https://tstullich.github.io/about/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Portfolio",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/tstullich.github.io\/portfolio\/"
+        },"genre": "page","wordcount":  1510 ,
+        "url": "https:\/\/tstullich.github.io\/portfolio\/","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Tim Stullich"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Tim Stullich">Tim Stullich</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/portfolio"> Portfolio </a><a class="menu-item" href="/about"> About </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Tim Stullich">Tim Stullich</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/portfolio" title="">Portfolio</a><a class="menu-item" href="/about" title="">About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><div class="page single special"><h1 class="single-title animate__animated animate__pulse animate__faster">Portfolio</h1><div class="content" id="content"><p>All of the source code for the listed projects can be viewed on my
+<a href="https://github.com/tstullich" target="_blank" rel="noopener noreffer">Github profile</a> or you can
+find a link to each individual repository at the bottom of each project.</p>
+<h1 id="personal-projects">Personal Projects</h1>
+<h2 id="1-vulkan-deferred-renderer-work-in-progress">1. Vulkan Deferred Renderer (Work In Progress)</h2>
+<p><code>C++</code> <code>Vulkan</code> <code>GLSL</code> <code>C++</code> <code>Dear ImGui</code> <code>Rendering</code> <code>GUI</code> <code>Shaders</code></p>
+<figure><img src="/img/triangle-ui.png"
+         alt="Vulkan Renderer"/><figcaption>
+            <p>The first triangle has been rendered!</p>
+        </figcaption>
+</figure>
+
+<p>I am currently working on building out a deferred renderer using Vulkan and Dear ImGui. My intent
+is to improve my knowledge around Vulkan and realtime rendering, while also providing
+a way for others to see what it&rsquo;s like building a renderer from scratch. I plan to publish
+the source code so that others can freely use it and extend code if they wish.</p>
+<p>Follow the development on <a href="https://github.com/tstullich/renderer" target="_blank" rel="noopener noreffer">Github</a> or through my <a href="/posts/" rel="">blog posts</a>.</p>
+<h2 id="2-odin---a-vulkan-based-path-tracer">2. Odin - A Vulkan-based Path Tracer</h2>
+<p><code>C++</code> <code>GLSL</code> <code>Vulkan</code> <code>Realtime Rendering</code> <code>Shaders</code></p>
+<p>This project was my first step into getting my feet wet with the Vulkan API. When NVIDIA
+announced their first GPU series featuring the
+<a href="https://www.nvidia.com/en-us/geforce/turing/" target="_blank" rel="noopener noreffer">Turing architecture</a>, I decided to test if it was
+possible to write a real-time raytracing application without a dedicated GPU.</p>
+<p>The renderer uses a single compute shader to perform the path tracing algorithm and write the result
+into a texture image which can be sampled from the graphics pipeline. It also sports the following
+features:</p>
+<ul>
+<li>Support for diffuse, caustic, and dielectric materials</li>
+<li>Tracing of geometry serialized in the OBJ file format</li>
+<li>A basic Bounding Volume Hierarchy using axis-aligned bounding boxes</li>
+</ul>
+<p>Overall, the implementation is still quite bottlenecked due to the fact that there are a lot of branching
+instructions, which only lets the renderer run at around 10-20 FPS on my hardware. If I could spend some
+time optimizing my shader code, I could envision the renderer having more practical applications.</p>
+<p>The source code can be found <a href="https://github.com/tstullich/odin" target="_blank" rel="noopener noreffer">here</a>.</p>
+<h2 id="3-raytracing-in-one-weekend-in-rust">3. Raytracing In One Weekend In Rust</h2>
+<p><code>Rust</code> <code>Raytracing</code></p>
+<figure><img src="/img/rust-pt.png"
+         alt="Rust Path Tracer"/><figcaption>
+            <p>An image created with the Rust path tracer at 1200x800 resolution and 1024spp</p>
+        </figcaption>
+</figure>
+
+<p>As a challenge to myself to learn Rust, I decided to adapt Peter Shirley&rsquo;s
+<a href="https://raytracing.github.io/" target="_blank" rel="noopener noreffer">Raytracing In One Weekend</a> tutorial, which is written in C++, into a
+Rust application. All of the features from the first book are available including some extras:</p>
+<ul>
+<li>OBJ model parsing or randomized scene creation</li>
+<li>Support for configurable dielectric, diffuse, and caustic materials</li>
+<li>Motion blur</li>
+<li>Checkered textures support</li>
+<li>Configuring of rendering parameters through command line arguments</li>
+<li>Multithreaded rendering through the use of Rust&rsquo;s <code>rayon</code> library</li>
+</ul>
+<p>The source code can be found <a href="https://github.com/tstullich/rust-pt" target="_blank" rel="noopener noreffer">here</a>.</p>
+<h1 id="academic-projects">Academic Projects</h1>
+<h2 id="1-masters-thesis-on-differentiable-rendering">1. Master&rsquo;s Thesis On Differentiable Rendering</h2>
+<p><code>C++</code> <code>Python</code> <code>Differentiable Rendering</code> <code>Machine Learning</code></p>
+<figure><img src="/img/redner1.png"
+         alt="Redner"/><figcaption>
+            <p>Differentiable rendering tries to minimize the loss between two images by applying gradient descent</p>
+        </figcaption>
+</figure>
+
+<p>For my Master&rsquo;s thesis I decided to explore differentiable rendering, which combines machine learning
+with computer graphics. For a good explanation on the topic I encourage you to watch
+Wenzel Jakob&rsquo;s <a href="https://www.youtube.com/watch?v=prZJ8FBG9BI&amp;t=1895s" target="_blank" rel="noopener noreffer">Keynote Speech</a>
+during the High Performance Graphics 2020 conference.</p>
+<p>In my case, I chose to extend the capabilities of the differentiable renderer <code>redner</code>, which was
+introduced by Li et al. in the paper <a href="https://people.csail.mit.edu/tzumao/diffrt/" target="_blank" rel="noopener noreffer">Differentiable
+Monte Carlo Ray Tracing through Edge Sampling</a>,
+to be able to optimize homogeneous participating media.</p>
+<p>The figure above shows one of the test setups that was used to verify the code that I had written.
+The perturbed scene on the left-hand side is enveloped in a thick fog and the goal of the test run
+was to remove the fog entirely by optimizing the scene towards the target image on the right-hand side.</p>
+<p>The result of running the gradient descent optimization can be seen in the figure below. The fog has been
+nearly removed from the perturbed image, with some visual artifacts remaining in the tree line in the
+background.</p>
+<figure><img src="/img/redner2.png"
+         alt="Redner"/><figcaption>
+            <p>A capture of the results from optimizing homogeneous participating media through redner</p>
+        </figcaption>
+</figure>
+
+<p>For more details on my thesis please read through my <a href="/pdf/masters-presentation.pdf" rel="">thesis presentation</a> or contact me directly for a copy of the full thesis. The source code can be found <a href="https://github.com/tstullich/redner" target="_blank" rel="noopener noreffer">here</a>.</p>
+<h2 id="3-computer-graphics-2-tu-berlin">3. Computer Graphics 2 (TU Berlin)</h2>
+<p><code>OpenGL</code> <code>Qt5</code> <code>Data Structures</code> <code>Surface Reconstruction</code> <code>Implicit Surfaces</code></p>
+<p>The Computer Graphics 2 course taught a number of different techniques focused around geometric reconstruction
+and implicit surfaces. All of the assignments focused on a particular topic within those domains and were completed in collaboration with two group members. For the coding portions of the assignments we
+used OpenGL to perform our graphics computations, with Qt5 acting as the framework for the demos&rsquo; user
+interface. Qt5 allowed us to dynamically adjust the parameters for the various demonstrations.
+What follows are some of the highlights of the course.</p>
+<h3 id="k-d-trees-with-nearest-neighbor-point-search">K-d Trees With Nearest Neighbor Point Search</h3>
+<figure><img src="/img/kd-tree.png"
+         alt="Point Cloud Kd Tree"/><figcaption>
+            <p>The k-d tree data structure being used to perform k-nearest neighbor search on a point cloud</p>
+        </figcaption>
+</figure>
+
+<p>This assignment revolved around building a k-d tree data structure, which acts as a binary tree data structure
+for k-dimensional point sets. This is accomplished by partitioning the k-dimensional (k=3 in our
+case) spatial domain into a half-space. To find a dividing plane for the half-space, the points in
+our data sets were sorted using a quicksort algorithm, which I implemented from scratch for efficient sorting.</p>
+<p>The k-d tree was then used in our application to implement a N-Nearest Neighbor Search algorithm to collect
+an arbitrary set of points near a point in space. The image above shows how a user can select a point in the
+data set, and the nearest neighbor search then gathers of a preset amount of points in its neighborhood.
+The selected point is highlighted in pink and the n-closest points (N=1617) are shown in green.</p>
+<h3 id="surface-reconstruction-using-marching-cubes">Surface Reconstruction Using Marching Cubes</h3>
+<figure><img src="/img/mc-points.png"
+         alt="Implicit Point Cloud"/><figcaption>
+            <p>The model in this picture is represented by a point cloud implicit surface implementation</p>
+        </figcaption>
+</figure>
+
+<p>This assignment focused on surface reconstruction using the marching cubes algorithm. From the implicit
+surface representation, shown in the above image, a 3D cube is <em>marched</em> along an adjustable fixed
+grid. At each step, we test what parts of the cube&rsquo;s surface is inside or outside of the volume by
+intersecting a set of 256 precomputed triangle configurations with the surface. If an intersection is
+found, a triangle is constructed through the three intersection points of the cube with the surface
+and added to a mesh data structure.</p>
+<figure><img src="/img/mc-dog.png"
+         alt="Dog Marching Cubes"/><figcaption>
+            <p>The reconstructed surface model through the use of a Marching Cubes algorithm</p>
+        </figcaption>
+</figure>
+
+<p>One such mesh, which was created after one run of the marching cubes algorithm, can be seen above. Although
+the mesh is not a perfect representation of the surface, it is possible to create finer approximations
+by adjusting the grid subdivision and tuning the nearest neighbor search parameters.</p>
+<p>The source code for these projects can be found <a href="http://github.com/tstullich/cg2" target="_blank" rel="noopener noreffer">here</a>.</p>
+<h2 id="4-computer-graphics-1-tu-berlin">4. Computer Graphics 1 (TU Berlin)</h2>
+<p><code>JavaScript</code> <code>WebGL</code> <code>Shaders</code> <code>Scene Graphs</code></p>
+<figure><img src="/img/cg1-raytracer.png"
+         alt="CG1 Ray Tracer"/><figcaption>
+            <p>A WebGL ray tracer that I wrote as part of my studies in CG1</p>
+        </figcaption>
+</figure>
+
+<p>The very first course that I took for computer graphics was the CG 1 course taught at the
+Technical University Berlin. This was an introductory course which covered a classical forward
+rendering pipeline from front to back. Among the topics covered were:</p>
+<ul>
+<li>Scene graph representations and linear transformations</li>
+<li>Camera projections</li>
+<li>Texture mapping</li>
+<li>Various shading techniques (Gourad, Phong, etc.)</li>
+<li>Color theory</li>
+</ul>
+<p>The final assignment for the course is what convinced me to focus on rendering. The
+assignment let us write a ray tracer in WebGL which produced the output image seen above.
+The simplicity of the ray tracing algorithm, along with the stunning output it provides
+drove me to learn more about the subject and soon enough I was deep into the rabbit hole on rendering.</p>
+<p>The source code for the ray tracer as well as the other projects can be found
+<a href="http://github.com/tstullich/cg1" target="_blank" rel="noopener noreffer">here</a>.</p>
+<h1 id="conference-papers">Conference Papers</h1>
+<h2 id="edbt-2019-demonstration-paper-publication">EDBT 2019 Demonstration Paper Publication</h2>
+<p><code>C++</code> <code>Scientific Writing</code> <code>IoT</code> <code>Sensor Networks</code></p>
+<p>During my time as a Student Research Assistant with the Database Systems and Information Management Group
+at the Technical University in Berlin, I got the chance to work on a demonstration paper that was presented
+at the <em>Extending Database Technology</em> conference in 2019. The work was focused on recording and
+replaying sensor data on IoT devices. The abstract for the paper has been cited below:</p>
+<blockquote>
+<p>As the scientific interest in the Internet of Things (IoT) continues to grow, emulating IoT infrastructure
+involving a large number of heterogeneous sensors plays a crucial role. Existing research on emulating
+sensors is often tailored to specific hardware and/or software, which makes it difficult to reproduce and
+extend. In this paper we show how to emulate different kinds of sensors in a unified way that makes
+the downstream application agnostic as to whether the sensor data is acquired from real sensors is read
+from memory using emulated sensors. We propose the Resense framework that allows for replaying sensor
+data using emulated sensors and provides an easy-to-use software for setting up and executing IoT
+experiments involving a large number of heterogeneous sensors. We demonstrate various aspects of
+Resense in the context of a sports analytics application using real-world sensor data and a set
+of Raspberry Pis.</p>
+<p>&ndash; <em><!-- raw HTML omitted -->Resense: Transparent Record and Replay of Sensor Data in the Internet of Things<!-- raw HTML omitted --></em></p>
+</blockquote>
+<p>The full paper can be read <a href="https://openproceedings.org/2019/conf/edbt/EDBT19_paper_319.pdf" target="_blank" rel="noopener noreffer">here</a>.</p>
+</div></div></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.99.1">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2019 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Tim Stullich</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.1/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/copy-tex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

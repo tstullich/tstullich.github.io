@@ -1,0 +1,8 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Categories - Category - Tim Stullich</title>
+        <link>https://tstullich.github.io/categories/</link>
+        <description>Categories - Category - Tim Stullich</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>tstullich&#39;at&#39;protonmail.com (Tim Stullich)</managingEditor>
+            <webMaster>tstullich&#39;at&#39;protonmail.com (Tim Stullich)</webMaster><atom:link href="https://tstullich.github.io/categories/" rel="self" type="application/rss+xml" /></channel>
+</rss>
