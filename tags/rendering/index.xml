@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>rendering - Tag - Tim Stullich</title>
+        <link>https://tstullich.github.io/tags/rendering/</link>
+        <description>rendering - Tag - Tim Stullich</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>tstullich&#39;at&#39;protonmail.com (Tim Stullich)</managingEditor>
+            <webMaster>tstullich&#39;at&#39;protonmail.com (Tim Stullich)</webMaster><lastBuildDate>Wed, 08 Jun 2022 16:47:01 &#43;0000</lastBuildDate><atom:link href="https://tstullich.github.io/tags/rendering/" rel="self" type="application/rss+xml" /><item>
+    <title>Once More, With Feeling</title>
+    <link>https://tstullich.github.io/posts/once-more/</link>
+    <pubDate>Wed, 08 Jun 2022 16:47:01 &#43;0000</pubDate>
+    <author>Tim Stullich</author>
+    <guid>https://tstullich.github.io/posts/once-more/</guid>
+    <description><![CDATA[I have recently encountered a common problem I am sure lots of programmers have faced before - discovering their graveyard of unfinished side projects. In my particular case, I was scrolling through my Github profile, taking stock of all of the repositories that I have not committed code to in over a year, and the total came out to be a staggering 40 repositories. To me, this is not a great stat, considering I have been actively committing to just 3 repositories in the last year.]]></description>
+</item>
+</channel>
+</rss>

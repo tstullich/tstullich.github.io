@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Once More, With Feeling - Tim Stullich</title><meta name="Description" content="An introductory post on an upcoming project"><meta property="og:title" content="Once More, With Feeling" />
+<meta property="og:description" content="An introductory post on an upcoming project" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://tstullich.github.io/posts/once-more/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-06-08T16:47:01+00:00" />
+<meta property="article:modified_time" content="2022-06-08T16:47:01+00:00" /><meta property="og:site_name" content="Tim Stullich&#39;s Blog" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Once More, With Feeling"/>
+<meta name="twitter:description" content="An introductory post on an upcoming project"/>
+<meta name="application-name" content="Tim Stullich">
+<meta name="apple-mobile-web-app-title" content="Tim Stullich"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://tstullich.github.io/posts/once-more/" /><link rel="prev" href="https://tstullich.github.io/posts/vulkan-sandbox/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Once More, With Feeling",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/tstullich.github.io\/posts\/once-more\/"
+        },"genre": "posts","keywords": "personal, rendering","wordcount":  1451 ,
+        "url": "https:\/\/tstullich.github.io\/posts\/once-more\/","datePublished": "2022-06-08T16:47:01+00:00","dateModified": "2022-06-08T16:47:01+00:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Tim Stullich"
+            },"description": "An introductory post on an upcoming project"
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Tim Stullich">Tim Stullich</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/portfolio"> Portfolio </a><a class="menu-item" href="/about"> About </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Tim Stullich">Tim Stullich</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/portfolio" title="">Portfolio</a><a class="menu-item" href="/about" title="">About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Once More, With Feeling</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Tim Stullich</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="08-06-2022">08-06-2022</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1451 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;7 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="true">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#failure-to-launch">Failure To Launch</a>
+      <ul>
+        <li><a href="#perceived-payoff-why-does-it-even-matter">Perceived Payoff (Why Does It Even Matter?)</a></li>
+        <li><a href="#time-management-just-let-it-go-from-time-to-time">Time Management (Just Let It Go From Time To Time)</a></li>
+        <li><a href="#subject-matter-knowledge-the-dreaded-impostor-syndrome">Subject Matter Knowledge (The Dreaded Impostor Syndrome)</a></li>
+      </ul>
+    </li>
+    <li><a href="#a-new-hope">A New Hope</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>I have recently encountered a common problem I am sure lots of programmers have faced before - discovering
+their graveyard of unfinished side projects. In my particular case,
+I was scrolling through my Github profile, taking stock of all of the repositories that I have not committed
+code to in over a year, and the total came out to be a staggering <strong>40</strong> repositories. To me, this is not a great
+stat, considering I have been actively committing to just <strong>3</strong> repositories in the last year.</p>
+<figure><a class="lightgallery" href="/img/boulevard-of-broken-dreams.png" title="/img/boulevard-of-broken-dreams.png" data-thumbnail="/img/boulevard-of-broken-dreams.png" data-sub-html="<h2>A glimpse of my personal Boulevard Of Broken Dreams</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/img/boulevard-of-broken-dreams.png"
+            data-srcset="/img/boulevard-of-broken-dreams.png, /img/boulevard-of-broken-dreams.png 1.5x, /img/boulevard-of-broken-dreams.png 2x"
+            data-sizes="auto"
+            alt="/img/boulevard-of-broken-dreams.png" />
+    </a><figcaption class="image-caption">A glimpse of my personal Boulevard Of Broken Dreams</figcaption>
+    </figure>
+<p>The number of repositories with flatlined commit pulses serve as a reminder of all the different ideas
+I have had over the years, which eventually ended up dying off for one reason or another. Some would say this is a
+normal occurence for side projects. They are after all just side projects, which should only be worked on as long as one
+enjoys it. While I agree with this notion, I cannot help but be frustrated with myself, that I was not able to see some
+of these projects through to the end, for I believe they would have had some intrinsic worth to someone one way or another.
+Or this is just my complaint to Github&rsquo;s UX team for giving repositories human-like qualities with their commit ECG line,
+leading me to become too emotionally attached to my projects.</p>
+<p>Perhaps I am being a little harsh on myself, because not all of the repositories I counted are incomplete. Some repositories
+I left because they were <em>finished</em> for a lack of a better word. I determined there was nothing more to be worked on, so I moved
+on to create something else. But this recent scroll through my Github profile has served to spark my interest in writing
+down some of my thoughts in regards to side projects and how motivation can make or break one. In addition, I am also going
+to briefly touch on another project I have planned and why you should stick around for further content.</p>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw" aria-hidden="true"></i>Note<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">If you know me personally, you can safely skip over this note. For the others who may have accidentally stumbled upon
+this post from a remote part of the internet, please note that I am mostly going to write from my own personal
+perspective in the hopes that my insights can help you out in some way. Perhaps have a read of my short intro in my
+<a href="/posts/introduction/" rel="">Introduction</a> post to get a sense of where I am coming from.</div>
+        </div>
+    </div>
+<h2 id="failure-to-launch">Failure To Launch</h2>
+<p>To understand why motivation is a big factor in bringing a side project to completion, I would like to approach this subject by
+talking about about some elements that can influence motivation. The following elements tend to negatively influence my mindset before
+and during my work on a side project:</p>
+<ol>
+<li>Perceived payoff</li>
+<li>Time</li>
+<li>Knowledge on the subject matter</li>
+</ol>
+<p>While these factors do not capture a complete list, nor are they mutually exclusive, I have identified them to be the most
+detrimental to my own motivation. In the following paragraphs, I will touch on some of my thoughts as to how these influences arise and how
+I try to overcome them.</p>
+<h3 id="perceived-payoff-why-does-it-even-matter">Perceived Payoff (Why Does It Even Matter?)</h3>
+<p>The question of <em>why</em> to even start a side project comes up almost every time I get an idea in my head to work on something new.
+I used to have this preconceived notion in my head, that if my work does not produce something tangible to another person, then
+it is not worth starting at all. Why would should I try and write another renderer, mobile app, parser, etc. when there are tons of
+other projects out there that do this very thing already and better? Nobody is going to take a look at my newest side project, because
+I am just some guy on the internet who is just trying to fly by the seam of his pants.</p>
+<p>Pressuring myself into thinking that I had to care about anyone&rsquo;s opinion but my own is what caused me to burn out quickly
+on any project and it took me quite some time to realize, that I needed to shift my mindset around and instead focus my side projects
+towards myself. Instead of asking myself if my project had any worth to someone else, I started asking myself what does
+this project do for <em>me</em>?  Does it help me learn a new subject matter that I was not familiar with? Do I get to build something
+cool just for the sake of me thinking it&rsquo;s cool?</p>
+<p>This change in mentality is what has helped me find a lot more enjoyment in trying out a new SDK or implementing parts of an
+article that I read online.</p>
+<h3 id="time-management-just-let-it-go-from-time-to-time">Time Management (Just Let It Go From Time To Time)</h3>
+<p>Managing time to work on a side project can be challenging. Most of us have very limited time in the day to spend on writing
+code due to work, family, good weather, etc. This means that free time is precious and needs to be spent wisely. The approach
+I used to take in college was to have a set schedule and allocate some time in the evening to work on my projects. Often this meant
+working later into the night than I wanted to, sacrificing sleep over some features to add to my mobile app. This worked well
+during my time as a student, when I had lectures to catch up on sleep (I know I am not a great student 😅), but now
+that I have graduated from university my schedule has shifted. I now have to dedicate most of my time during the week to coding at a job,
+so I cannot look at code when I get home during the week. My motivation for writing code cannot be lower than after having programmed
+all day at my job.</p>
+<p>I know there are people out there that love coding, so much that they can do it even after having just done a 9-5 day programming.
+I have a lot of respect for these people, but I am not the kind of person. I need to exercise, enjoy the outdoors, and pursue some other
+hobbies that are not in front of my computer.</p>
+<p>So how do I manage my free time to work on a side project? Nowadays, I work on projects when the mood strikes me. If I have some time
+on the weekend where I usually get these bursts of creative energy, I get on my computer and write some code until I feel I have had enough.
+Sometimes that&rsquo;s just 30 minutes, sometimes that can be multiple hours at a time - and that&rsquo;s fine. Now that I have gotten older, I
+have realized that I should not stress myself out too much, when I do not see lots of progress on a project. As the saying goes
+&ldquo;Rome wasn&rsquo;t built in a day&rdquo;, so do I approach my side projects.</p>
+<p>To further drive home this point, the XKCD comic below demonstrates that unless you are on the level of <a href="https://twitter.com/ocornut" target="_blank" rel="noopener noreffer">Omar Cornut</a>,
+whatever you are working on in your free time can wait (trust me, it&rsquo;s not that important).</p>
+<figure><a class="lightgallery" href="/img/dependency.png" title="/img/dependency.png" data-thumbnail="/img/dependency.png" data-sub-html="<h2>Not captured here, a side project that I am maintaining (thankfully) [1]</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/img/dependency.png"
+            data-srcset="/img/dependency.png, /img/dependency.png 1.5x, /img/dependency.png 2x"
+            data-sizes="auto"
+            alt="/img/dependency.png" />
+    </a><figcaption class="image-caption">Not captured here, a side project that I am maintaining (thankfully) <a href="https://xkcd.com/2347/" target="_blank" rel="noopener noreffer">[1]</a></figcaption>
+    </figure>
+<h3 id="subject-matter-knowledge-the-dreaded-impostor-syndrome">Subject Matter Knowledge (The Dreaded Impostor Syndrome)</h3>
+<h2 id="a-new-hope">A New Hope</h2>
+<p>So why did I just spend all this time trying to talk about motivation and side projects? Well, you might have guessed it - I am
+starting a new side project! This also ties into the title of this post, because I am going to attempt to once again try and
+write a real-time physically-based renderer, which I have began and abandoned due to all of the negative factors I just discussed.
+However, this time things will be different (famous last words&hellip;). I have been able to enlist a colleague and friend of mine
+who is going to help me see things through. I also want to take this project to help share some of my experiences in written
+form. Ideally, I would like to produce a few technical and non-technical blog posts to share my insights from working on
+this project with someone else.</p>
+<p>It is difficult to say how far along my friend and I will get, but my hope is that we will complete this project and come out with something
+to show for it (ideally with all of our features being completely implemented and having some kickass renders to show for 😄).
+I am going to elaborate more on this project in a future post, but if this has piqued your interest</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 08-06-2022</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://tstullich.github.io/posts/once-more/" data-title="Once More, With Feeling" data-via="tstullich" data-hashtags="personal,rendering"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://tstullich.github.io/posts/once-more/"><i class="fab fa-linkedin fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://tstullich.github.io/posts/once-more/" data-title="Once More, With Feeling"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Reddit" data-sharer="reddit" data-url="https://tstullich.github.io/posts/once-more/"><i class="fab fa-reddit fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/personal/">personal</a>,&nbsp;<a href="/tags/rendering/">rendering</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/vulkan-sandbox/" class="prev" rel="prev" title="A Vulkan &#43; Dear ImGui Sandbox"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>A Vulkan + Dear ImGui Sandbox</a></div>
+</div>
+<div id="comments"><div id="disqus_thread" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://disqus.com/?ref_noscript">Disqus</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.101.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2019 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Tim Stullich</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.4.0/css/lightgallery-bundle.min.css"><script type="text/javascript" src="https://tilt-shift.disqus.com/embed.js" defer></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.1/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.4.0/lightgallery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.4.0/plugins/thumbnail/lg-thumbnail.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.4.0/plugins/zoom/lg-zoom.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{},"lightgallery":true,"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
